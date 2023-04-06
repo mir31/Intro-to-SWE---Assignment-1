@@ -1,20 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
+
 void sum();
 void subtraction();
 void multiplication();
 void division();
 void squareroot();
-void power();
+void mpower();
+void circleAreaPerimeter();
 
 int main() {
+    int r;
+
     sum();
     subtraction();
     multiplication();
     division();
     squareroot();
     power();
+
+    printf("\nEnter the radius of a circle:\n");
+    scanf("%d", &r);
+    circleAreaPerimeter(r);
 
     return 0;
 }
@@ -62,4 +71,11 @@ void power() {
     scanf("%d %d", &a, &b);
     result = pow(a, b);
     printf("%d ^ %d = %d\n", a, b, result);
+}
+void circleAreaPerimeter(int radius) {
+    const float pi = 3.14159;
+    double area, perimeter;
+    perimeter = (double) 2 * pi * radius;
+    area = (double) pi * radius * radius;
+    printf("The perimeter of the circle is: %.2lf.\nThe area of the circle is: %.2lf.", perimeter, area);
 }
