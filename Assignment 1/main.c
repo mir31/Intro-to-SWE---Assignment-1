@@ -3,13 +3,16 @@
 #include <math.h>
 #include <string.h>
 
+const float pi = 3.14159;
+
 void sum();
 void subtraction();
 void multiplication();
 void division();
 void squareroot();
 void mpower();
-void circleAreaPerimeter();
+void circleArea();
+void circlePerimeter();
 
 int main() {
     int r;
@@ -23,7 +26,8 @@ int main() {
 
     printf("\nEnter the radius of a circle:\n");
     scanf("%d", &r);
-    circleAreaPerimeter(r);
+    circlePerimeter(r);
+    circleArea(r);
 
     return 0;
 }
@@ -72,10 +76,14 @@ void power() {
     result = pow(a, b);
     printf("%d ^ %d = %d\n", a, b, result);
 }
-void circleAreaPerimeter(int radius) {
-    const float pi = 3.14159;
-    double area, perimeter;
-    perimeter = (double) 2 * pi * radius;
+void circleArea(int radius) {
+    double area;
     area = (double) pi * radius * radius;
-    printf("The perimeter of the circle is: %.2lf.\nThe area of the circle is: %.2lf.", perimeter, area);
+    printf("The area of the circle is: %.2lf.\n", area);
+}
+
+void circlePerimeter(int radius) {
+    double perimeter;
+    perimeter = (double) 2 * pi * radius;
+    printf("The perimeter of the circle is: %.2lf.\n", perimeter);
 }
