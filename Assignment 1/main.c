@@ -61,5 +61,7 @@ void power() {
     printf("Enter one number and the power to raise it to:\n");
     scanf("%d %d", &a, &b);
     result = pow(a, b);
+    printf("we are team dy here mat");
+    printf("Test 1");
     printf("%d ^ %d = %d\n", a, b, result);
 }
